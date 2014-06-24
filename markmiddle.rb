@@ -6,4 +6,7 @@
 # Copylight (c) 2014 Lasta
 # [marmiddle](https://github.com/lasta/markmiddle/)
 #
+# ruby 2.0.0p451 (2014-02-24 revision 45167) [universal.x86_64-darwin13]
+# 
 
+$VERSION = '0.0.1'
