@@ -10,3 +10,9 @@
 # 
 
 $VERSION = '0.0.1'
+
+def listElement(element)
+    return '<li>' + element + '</li>'
+end
+
+sourceFile = File.open(ARGV[1])
