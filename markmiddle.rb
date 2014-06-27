@@ -24,4 +24,7 @@ def titleElement(title)
     end 
 end
 
-# sourceFile = File.open(ARGV[1])
+# ./markmiddle file.mm
+sourceFile = File.open(ARGV[1], "r")
+# output : file.html
+outputFile = File.open(ARGV[1].split(/\.\s+$/).first + '.html', "w")
