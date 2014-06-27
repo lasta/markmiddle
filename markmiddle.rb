@@ -15,4 +15,13 @@ def listElement(element)
     return '<li>' + element + '</li>'
 end
 
-sourceFile = File.open(ARGV[1])
+def titleElement(title)
+    if title !=~ /^#\ */
+        raise SyntaxError.new('Please write title (`# title`) in the first line')
+    else 
+        element = title.split(/^#\ */).last
+        return '<title>' + element + '</title>'
+    end 
+end
+
+# sourceFile = File.open(ARGV[1])
