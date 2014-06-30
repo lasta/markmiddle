@@ -14,6 +14,11 @@
 
 * [RedcarpetでMarkdown](http://ja.asciicasts.com/episodes/272-markdown-with-redcarpet)
 
+## コーディング規約
+* 関数名はCamelStyle
+* 変数名はcamelStyle
+* 実際にHTMLタグを出力する関数の名前は、HogeElement
+
 ## 仕様
 ### 見出し
 * `#+` = 見出し (`<h1>`, ...)

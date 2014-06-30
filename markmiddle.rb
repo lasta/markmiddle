@@ -11,17 +11,29 @@
 
 $VERSION = '0.0.1'
 
-def listElement(element)
-    return '<li>' + element + '</li>'
+def ListElement(content)
+    return '<li>' + content + '</li>'
 end
 
-def titleElement(title)
-    if title !=~ /^#\ */
-        raise SyntaxError.new('Please write title (`# title`) in the first line')
+def TitleElement(firstLine)
+    if firstLine =~ /^#\ */
+        content = firstLine.split(/^#\ */).last
+        return '<title>' + content + '</title>'
     else 
-        element = title.split(/^#\ */).last
-        return '<title>' + element + '</title>'
+        raise SyntaxError.new('Write title (`# title`) in the first line')
     end 
+end
+
+def AnchorElement(anchor)
+    anchor.chomp!
+    # TODO: contentに"("")"、urlに"[""]"が含まれる場合
+    if anchor =~ /\[\s+\]\(\s+\)/ then
+        content = $1
+        url = $2
+        return '<a href="' + url + '"> ' content + ' </a>'
+    else
+        raise SyntaxError.new('Link syntax error. Usage: `[content](url)`')
+    end
 end
 
 # ./markmiddle file.mm
