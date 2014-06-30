@@ -25,8 +25,8 @@ def TitleElement(firstLine)
 end
 
 def AnchorElement(anchor)
-    anchor.chomp!
     # TODO: contentに"("")"、urlに"[""]"が含まれる場合
+    # TODO: "anchor.chomp!" の必要性
     if anchor =~ /\[\s+\]\(\s+\)/ then
         content = $1
         url = $2
@@ -34,6 +34,20 @@ def AnchorElement(anchor)
     else
         raise SyntaxError.new('Link syntax error. Usage: `[content](url)`')
     end
+end
+
+def ImageElement(img) # img : `![caption](/path/to/pict)`
+    # return '<img alt="' + caption + '" src="' + url + '" />' if img =~ /!\[\s+\]\(\s+\)/
+    if img =~ /!\[\s+\]\(\s+\)/ then
+        alt = $1
+        src = $2
+        return '<img alt="' + caption + '" src="' + url + '" />'
+    end
+end
+
+def HorizonLineElement(line)
+    # TODO hr判定のif文はここではないはずだ
+    return '<hr />' if line =~ /\*{3,}|-{3,}|={3,}/
 end
 
 # ./markmiddle file.mm
