@@ -11,9 +11,6 @@
 
 $VERSION = '0.0.1'
 
-def ListElement(content)
-    return '<li>' + content + '</li>'
-end
 
 def TitleElement(firstLine)
     if firstLine =~ /^#\ */
@@ -36,6 +33,10 @@ def AnchorElement(anchor)
     end
 end
 
+def ListElement(content)
+    return '<li>' + content + '</li>'
+end
+
 def ImageElement(img) # img : `![caption](/path/to/pict)`
     # return '<img alt="' + caption + '" src="' + url + '" />' if img =~ /!\[\s+\]\(\s+\)/
     if img =~ /!\[\s+\]\(\s+\)/ then
@@ -50,7 +51,21 @@ def HorizonLineElement(line)
     return '<hr />' if line =~ /\*{3,}|-{3,}|={3,}/
 end
 
+def Header(firstLine)
+    # TODO: DTD
+    # <!DOCTYPE
+    outputFile += `<html>\n`
+    outputFile += `<head>\n`
+    outputFile += TitleElement(firstLine)
+    outputFile += `<\head>\n`
+end
+
 # ./markmiddle file.mm
 sourceFile = File.open(ARGV[1], "r")
 # output : file.html
 outputFile = File.open(ARGV[1].split(/\.\s+$/).first + '.html', "w")
+
+sourceFile.foreach() do |line|
+
+
+end
