@@ -42,7 +42,7 @@ def ImageElement(img) # img : `![caption](/path/to/pict)`
     if img =~ /!\[\s+\]\(\s+\)/ then
         alt = $1
         src = $2
-        return '<img alt="' + caption + '" src="' + url + '" />'
+        return '<img alt="' + caption + '" src="' + src + '" />'
     end
 end
 
@@ -58,6 +58,10 @@ def Header(firstLine)
                + '<meta charset="UTF-8" />\n'
                + TitleElement(firstLine)
                + '<\head>\n'
+end
+
+def Body(sourceFile)
+
 end
 
 # ./markmiddle file.mm
