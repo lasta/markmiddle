@@ -52,12 +52,12 @@ def HorizonLineElement(line)
 end
 
 def Header(firstLine)
-    # TODO: DTD
-    # <!DOCTYPE
-    outputFile += `<html>\n`
-    outputFile += `<head>\n`
-    outputFile += TitleElement(firstLine)
-    outputFile += `<\head>\n`
+    outputFile = '<!DOCTYPE html>\n'
+               + '<html>\n'
+               + '<head>\n'
+               + '<meta charset="UTF-8" />\n'
+               + TitleElement(firstLine)
+               + '<\head>\n'
 end
 
 # ./markmiddle file.mm
