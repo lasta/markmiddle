@@ -4,13 +4,23 @@
 * 改行を無視?(qiita風) 半角スペース2つで会議用? (元のmarkdown風)
 * markdown 文書を管理するツール
 * まともなmarkdown editor
+* マルチプラットフォーム化
 * 任意の特定の命令をファイル全体で無効化する (`_`やlinkを無効化など)
 * listの扱いをもっと明確に
     * 空行を挟んだらbreak listしてほしい
     * 改行付きlist
 * vimで書くとき、`set filetype=c.markdown`をして、コードとmarkdownの両方syntax highlightされるように
+  * highlightingだけでなく、neocompleteまで使えるとなお良い
 * `$` がペアで無いとき、syntax error
 * 仕様を1個ずつ書いていく
+* 定義リストの表現は変えた方がいい
+* インデントでコードブロックもどうなの
+* 引用は、アイテムリストのように、インデントで引用レベルかえられると良い
+* リストのひとつのitem内での改行とかどうなってるんだろうね
+* コードブロック内の数式の表現(texでいうalgorithm.sty)
+  * コードブロック内のコメントアウト内で数式がかけるといいね
+* original markdownのように改行コードは無視か、qiitaのように監視か
+
 
 * [RedcarpetでMarkdown](http://ja.asciicasts.com/episodes/272-markdown-with-redcarpet)
 
@@ -75,4 +85,5 @@
 ### 文字コード
 どうなっているんだろう。
 とりあえず、UTF-8で決め打ちしたい
+
 
