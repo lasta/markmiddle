@@ -21,7 +21,6 @@
   * コードブロック内のコメントアウト内で数式がかけるといいね
 * original markdownのように改行コードは無視か、qiitaのように監視か
 
-
 * [RedcarpetでMarkdown](http://ja.asciicasts.com/episodes/272-markdown-with-redcarpet)
 
 ## コーディング規約
