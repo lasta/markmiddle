@@ -3,7 +3,7 @@
 #
 # Markmiddle -- More rich than Markdown
 #
-# Copylight (c) 2014 Lasta
+# Copylight (c) 2015 Lasta
 # [marmiddle](https://github.com/lasta/markmiddle/)
 #
 # ruby 2.0.0p451 (2014-02-24 revision 45167) [universal.x86_64-darwin13]
@@ -22,8 +22,8 @@ def TitleElement(firstLine)
 end
 
 def AnchorElement(anchor)
-    # TODO: content$B$K(B"("")"$B!"(Burl$B$K(B"[""]"$B$,4^$^$l$k>l9g(B
-    # TODO: "anchor.chomp!" $B$NI,MW@-(B
+    # TODO: contentに"("")"、urlに"[""]"が含まれる場合
+    # TODO: "anchor.chomp!" の必要性
     if anchor =~ /\[\s+\]\(\s+\)/ then
         content = $1
         url = $2
@@ -47,7 +47,7 @@ def ImageElement(img) # img : `![caption](/path/to/pict)`
 end
 
 def HorizonLineElement(line)
-    # TODO hr$BH=Dj$N(Bif$BJ8$O$3$3$G$O$J$$$O$:$@(B
+    # TODO hr判定のif文はここではないはずだ
     return '<hr />' if line =~ /\*{3,}|-{3,}|={3,}/
 end
 
