@@ -5,3 +5,10 @@ gem 'sqlite3'
 gem 'nifty-generators'
 
 gem 'redcarpet'
+gem 'jshint'
+gem 'mathjax'
+
+gem 'node'
+gem 'underscore'
+
+gem 'redcarpet'
