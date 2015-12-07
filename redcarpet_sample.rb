@@ -1,3 +1,4 @@
+#! /usr/bin/env ruby
 require 'redcarpet'
 
 markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
