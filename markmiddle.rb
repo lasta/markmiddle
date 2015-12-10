@@ -21,9 +21,21 @@ def definition_list(document)
   end
 end
 
+# ----------------------
+# test for definition list
 test_definitionlist = <<"EOS"
 def_title
 : def_desc
 EOS
 
 puts definition_list(test_definitionlist)
+# ----------------------
+
+# 参考
+# http://doruby.kbmj.com/yablog/20090531/ruby_1
+# 実装途中
+def execution_block(document)
+  if document =~ /^\{\{\{(\S+)\n(\S+\n+)\}\}\}/ then
+    result = open($1)
+  end
+end
