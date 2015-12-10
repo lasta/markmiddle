@@ -6,3 +6,13 @@
 ---
 
 ***
+
+
+def-list title
+: def-list desc
+
+<dl>
+<dt>def-list title with html</dt>
+<dd>def-list description with html</dd>
+</dl>
+
