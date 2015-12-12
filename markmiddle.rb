@@ -28,7 +28,7 @@ end
 # http://doruby.kbmj.com/yablog/20090531/ruby_1
 # 実装途中
 def execution_block(document)
-  if document =~ /^\{\{\{(.+)\n(.*\n*)+\}\}\}/ then
+  if document =~ /^\{\{\{(.+)\n([\s\S]+)\}\}\}/ then
     puts $1
     puts $2
     # filename = SecureRandom.hex(16).to_s
@@ -48,6 +48,9 @@ definition list title
 {{{/bin/bash
 echo 'hoge'
 }}}
+
+hoge
+: fuga
 EOS
 
 # test code
