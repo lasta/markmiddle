@@ -28,12 +28,14 @@ end
 # http://doruby.kbmj.com/yablog/20090531/ruby_1
 # 実装途中
 def execution_block(document)
-  if document =~ /^\{\{\{(.+)\n(.+\n+)\}\}\}/ then
-    filename = SecureRandom.hex(16).to_s
-    File.open(filename, "w") do |file|
-      file.write($2)
-    end
-    result = open($1)
+  if document =~ /^\{\{\{(.+)\n(.*\n*)+\}\}\}/ then
+    puts $1
+    puts $2
+    # filename = SecureRandom.hex(16).to_s
+    # File.open(filename, "w") do |file|
+    #   file.write($2)
+    # end
+    # result = open($1)
   end
 end
 
@@ -44,8 +46,11 @@ definition list title
 : definition list description
 
 {{{/bin/bash
+echo 'hoge'
+}}}
 EOS
 
 # test code
 definition_list(test_document)
+execution_block(test_document)
 # end--------------------------------
