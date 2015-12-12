@@ -28,16 +28,18 @@ end
 # http://doruby.kbmj.com/yablog/20090531/ruby_1
 # 実装途中
 def execution_block(document)
-  if document =~ /^\{\{\{(.+)\n([\s\S]+)\}\}\}/ then
-    puts $1
-    puts $2
-    # filename = SecureRandom.hex(16).to_s
-    # File.open(filename, "w") do |file|
-    #   file.write($2)
-    # end
-    # result = open($1)
+  if document =~ /^\{\{\{(.+)\n([\s\S]+?)\}\}\}/ then
+    filename = SecureRandom.hex(16).to_s
+    File.write(filename, $2)
+    begin
+      exec($1 + " " + filename)
+    rescue
+      puts "exec error"
+    end
+    File.unlink filename
   end
 end
+
 
 # begin--------------------------------
 # test document
@@ -45,8 +47,8 @@ test_document = <<"EOS"
 definition list title
 : definition list description
 
-{{{/bin/bash
-echo 'hoge'
+{{{ruby
+puts 'hello'
 }}}
 
 hoge
@@ -55,5 +57,8 @@ EOS
 
 # test code
 definition_list(test_document)
+# exec blockはとりあえず動く
+# 実行するたびに、vimのカレントディレクトリにファイルを生成するため、
+# 放置
 execution_block(test_document)
 # end--------------------------------
