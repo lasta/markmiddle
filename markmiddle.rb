@@ -2,6 +2,7 @@
 require 'redcarpet'
 require 'html/pipeline'
 require 'tempfile'
+require 'open3'
 
 $VERSION = '0.0.1'
 
@@ -11,7 +12,9 @@ markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
 #   # markmiddle.preamble(io.read)
 #   puts markdown.render(io.read)
 # end
-
+# test document
+$input_file = File.open('/Users/lasta/Dropbox/Iwasaki-Lab/lmml/markmiddle/src/sample.mkd', 'r')
+$output_document = ''
 
 
 # 正規表現を書くべきはここじゃない
@@ -22,7 +25,7 @@ $deflist_symbol = ":"
 def definition_list(document)
   if document =~ /^(.+)\n#{$deflist_symbol}\ (.+)/ then
   # if document =~ /^(\S+)\n:\ (\S+)/ then
-    puts "<dl>\n  <dt>" + $1 + "</dt>\n  <dd>" + $2 + "</dd>\n</dl>\n"
+    return "<dl>\n  <dt>" + $1 + "</dt>\n  <dd>" + $2 + "</dd>\n</dl>\n"
   end
 end
 
@@ -34,21 +37,26 @@ end
 # やっぱり、コマンド1回ですぐ実行できるものでないとしんどい
 def execution_block(document)
   if document =~ /^\{\{\{(.+)\n([\s\S]+?)\}\}\}/ then
+    # out : 標準出力と標準エラーの両方が入る
+    # Open3.#caputure3 を用いると、stdout, stderr に分割できる
+    out, status = nil
     # execするスクリプト本体 source_file
+    # source_file = Tempfile.new('', 'r', 0777)
     source_file = Tempfile.new('')
     begin
       source_file.write $2
       source_file.rewind # ポインタを先頭に
       begin
-        exec($1 + " " + source_file.path)
+        out, status = Open3.capture2e($1 + " " + source_file.path)
       rescue
-        puts "exec error"
+        puts "execution_block error"
       end
     ensure
       source_file.close
       source_file.unlink
     end
   end
+  return out
 end
 
 
@@ -59,7 +67,8 @@ definition list title
 : definition list description
 
 {{{ruby
-puts 'hello'
+p 'hello'
+hoge
 }}}
 
 hoge
@@ -67,9 +76,7 @@ hoge
 EOS
 
 # test code
-definition_list(test_document)
-# exec blockはとりあえず動く
-# 実行するたびに、vimのカレントディレクトリにファイルを生成するため、
-# 放置
-execution_block(test_document)
+
+puts definition_list(test_document)
+puts execution_block(test_document)
 # end--------------------------------

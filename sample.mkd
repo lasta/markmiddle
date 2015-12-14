@@ -1,2 +1,10 @@
 def-list title
 : def-list desc
+
+{{{ruby
+puts 'hello' # ==> hello
+hoge         # ==> エラー
+}}}
+
+hoge
+: fuga
