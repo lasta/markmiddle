@@ -1,7 +1,9 @@
 #! /usr/bin/env ruby
 require 'redcarpet'
 require 'html/pipeline'
-require 'securerandom'
+require 'tempfile'
+
+$VERSION = '0.0.1'
 
 markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML)
 
@@ -27,16 +29,25 @@ end
 # 参考
 # http://doruby.kbmj.com/yablog/20090531/ruby_1
 # 実装途中
+# ファイルを0777で作成して、{{{の最後の引数にファイルを指定すれば、
+# gcc -o xxx #{filename} できそうだとおもったけど、実行どうしよう
+# やっぱり、コマンド1回ですぐ実行できるものでないとしんどい
 def execution_block(document)
   if document =~ /^\{\{\{(.+)\n([\s\S]+?)\}\}\}/ then
-    filename = SecureRandom.hex(16).to_s
-    File.write(filename, $2)
+    # execするスクリプト本体 source_file
+    source_file = Tempfile.new('')
     begin
-      exec($1 + " " + filename)
-    rescue
-      puts "exec error"
+      source_file.write $2
+      source_file.rewind # ポインタを先頭に
+      begin
+        exec($1 + " " + source_file.path)
+      rescue
+        puts "exec error"
+      end
+    ensure
+      source_file.close
+      source_file.unlink
     end
-    File.unlink filename
   end
 end
 
