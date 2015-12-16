@@ -7,4 +7,5 @@ gem 'html-pipeline'
 gem 'github-markdown'
 gem 'github-linguist'
 
-gem 'mathjax'
+gem 'mathjax-rails'
+gem 'coderay'
