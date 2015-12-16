@@ -5,8 +5,7 @@ require 'tempfile'
 require 'open3'
 
 require './lib/code_block.rb'
-require './lib/execution_block.rb'
-require './lib/definition_block.rb'
+require './lib/preprocess.rb'
 
 $VERSION = '0.0.1'
 
