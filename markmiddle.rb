@@ -9,7 +9,7 @@ require './lib/preprocess.rb'
 
 $VERSION = '0.0.1'
 
-def markdown(text)
+def markmiddle(text)
   options = {
     :fenced_code_blocks => true,
     :no_intra_emphasis => true,
@@ -18,32 +18,11 @@ def markdown(text)
     :lax_html_blocks => true,
     :superscript => true
   }
-  markdown_to_html = Redcarpet::Markdown.new(MarkmiddleRenderer, options)
-  markdown_to_html.render(text)
+  markmiddle_to_html = Redcarpet::Markdown.new(MarkmiddleRenderer, options)
+  markmiddle_to_html.render(text)
 end
 
-# begin--------------------------------
-# test document
-test_document = <<"EOS"
-definition list title
-: definition list description
-
-{{{ruby
-puts 'hello'
-# hoge
-}}}
-
-hoge
-: fuga
-
-```ruby
-def hello
-  puts 'hello'
-end
-```
-EOS
-
-# test code
-
-puts markdown(test_document)
-# end--------------------------------
+# ドキュメントファイルの読み込み
+# input_file = File.open(ARGV[0])
+input_file = File.open('./sample.mm')
+puts markmiddle(input_file.read)
