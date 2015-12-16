@@ -1,5 +1,6 @@
 require './lib/execution_block.rb'
 require './lib/definition_block.rb'
+require './lib/table_block'
 
 class MarkmiddleRenderer < Redcarpet::Render::HTML
   def preprocess(document)
@@ -9,6 +10,10 @@ class MarkmiddleRenderer < Redcarpet::Render::HTML
 
     execution_block_symbol = ['\{\{\{', '\}\}\}']
     execution_block(document, execution_block_symbol)
+
+    table_block_symbol_open = '\{\{'
+    table_block_symbol_close = '\}\}'
+    table_block(document, table_block_symbol_open, table_block_symbol_close)
   end
 end
 
