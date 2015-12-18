@@ -8,12 +8,14 @@ class MarkmiddleRenderer < Redcarpet::Render::HTML
     deflist_symbol = ':'
     definition_block(document, deflist_symbol)
 
-    execution_block_symbol = ['\{\{\{', '\}\}\}']
+    execution_block_symbol = ['{{{', '}}}']
     execution_block(document, execution_block_symbol)
 
-    table_block_symbol_open = '\{\{'
-    table_block_symbol_close = '\}\}'
-    table_block(document, table_block_symbol_open, table_block_symbol_close)
+    table_block(document, '{{', '}}')
+    # execution blockのように配列で渡すとなぜかsegmentation fault
+    # table_block_symbol_open = '\{\{'
+    # table_block_symbol_close = '\}\}'
+    # table_block(document, table_block_symbol_open, table_block_symbol_close)
   end
 end
 
