@@ -17,20 +17,23 @@ end
 
 
 def table_csv(document, tag_open, tag_close)
-  document.gsub! /^#{tag_open}csv\n([\s\S]+?)#{tag_close}/ do
-    csv_data = CSV.parse($1)
-    # メタデータがあるので、shiftしてから渡す
-    csv2html(csv_data)
-  end
+  #unless document.match /^#{tag_open}csv\n([\s\S]+?)#{tag_close}/
+    document.gsub! /^#{tag_open}csv\n([\s\S]+?)#{tag_close}/ do
+      csv_data = CSV.parse($1)
+      # メタデータがあるので、shiftしてから渡す
+      csv2html(csv_data)
+    end
+  #end
 end
 
 def table_csv_import(document, tag_open, tag_close)
+  # コードブロックの場合は実行しない
   #unless document.match /^```.*\n^#{tag_open}csv:(.+?)#{tag_close}$\n```/
-    document.gsub! /^#{tag_open}csv:(.+?)#{tag_close}$/ do
-      # TODO : file open 失敗時の処理
-      csv_data = CSV.open($1.strip, "r")
-      csv2html(csv_data)
-    end
+  document.gsub! /^#{tag_open}csv:(.+?)#{tag_close}$/ do
+    # TODO : file open 失敗時の処理
+    csv_data = CSV.open($1.strip, "r")
+    csv2html(csv_data)
+  end
   #end
 end
 

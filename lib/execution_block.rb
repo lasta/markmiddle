@@ -5,11 +5,11 @@ require 'open3'
 
 def execution_block(document, tag)
   tag_open, tag_close = tag
-  unless document.match /^```.*\n^#{tag_open}([\s\S]+?)\n([\s\S]+?)#{tag_close}\n```/
+  #unless document.match /^```.*\n^#{tag_open}([\s\S]+?)\n([\s\S]+?)#{tag_close}\n```/
     document.gsub! /^#{tag_open}([\s\S]+?)\n([\s\S]+?)#{tag_close}/ do
       exec($1, $2)
     end
-  end
+  #end
 end
 
 def exec(command, source)
