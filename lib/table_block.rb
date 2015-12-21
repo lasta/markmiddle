@@ -2,7 +2,7 @@ require 'redcarpet'
 require 'csv'
 # table block
 
-def table_block(document, tag_open, tag_close)
+def table_line_oriented(document, tag_open, tag_close)
   # TableLineOriented
   # ^\{\{\n(\|\ ((?!.*\|).+$))+?
   # document.gsub! /^#{tag_open}\n((\|\ (?!.*\|).*?$)+?)
@@ -13,18 +13,22 @@ def table_block(document, tag_open, tag_close)
   document.gsub! /^#{tag_open}\n([\s\S]+?)#{tag_close}/ do
     # $1.gsub! /^\|(.*?\n)/
   end
+end
 
-  # CSV 直書き
+
+def table_csv(document, tag_open, tag_close)
   document.gsub! /^#{tag_open}csv\n([\s\S]+?)#{tag_close}/ do
-    # csv = CSV.read
+    csv_data = CSV.parse($1)
+    # メタデータがあるので、shiftしてから渡す
+    csv2html(csv_data)
   end
+end
 
-  # TableCSVImport
-  document.gsub /^{{csv:(.+?)}}$/ do
+def table_csv_import(document, tag_open, tag_close)
+  document.gsub /^#{tag_open}csv:(.+?)#{tag_close}$/ do
     # TODO : file open 失敗時の処理
     csv_data = CSV.open($1.strip, "r")
-    # メタデータがあるので、shiftしてから渡す
-    csv2html(csv_data.shift)
+    csv2html(csv_data)
   end
 end
 
@@ -35,7 +39,7 @@ def csv2html(csv)
   # table header
   html += "<thead>\n"
   html += "<tr>\n"
-  csv.each {|elem|
+  csv.shift.each {|elem|
     html += "<th>"
     html += elem.to_s
     html += "</th>\n"
@@ -47,10 +51,10 @@ def csv2html(csv)
   csv.each {|row|
     html += "<tr>\n"
     row.each {|elem|
-    html += "<td>"
-    html += elem.to_s
-    html += "</td>\n"
-  }
+      html += "<td>"
+      html += elem.to_s
+      html += "</td>\n"
+    }
     html += "</tr>\n"
   }
   html += "</tbody>\n"
