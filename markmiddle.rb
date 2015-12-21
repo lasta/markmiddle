@@ -5,6 +5,7 @@ require 'tempfile'
 require 'open3'
 
 # require './lib/code_block.rb'
+require './lib/document_style.rb'
 require './lib/preprocess'
 require './lib/process'
 
