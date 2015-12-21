@@ -32,6 +32,9 @@ def markmiddle(text)
 end
 
 # ドキュメントファイルの読み込み
-# input_file = File.open(ARGV[0])
-input_file = File.open('./sample.mm')
+unless ARGV[0].nil? then
+  input_file = File.open(ARGV[0])
+else
+  input_file = File.open('./sample_wo_codeblock.mm')
+end
 puts markmiddle(input_file.read)
