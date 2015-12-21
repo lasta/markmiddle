@@ -25,11 +25,13 @@ def table_csv(document, tag_open, tag_close)
 end
 
 def table_csv_import(document, tag_open, tag_close)
-  document.gsub /^#{tag_open}csv:(.+?)#{tag_close}$/ do
-    # TODO : file open 失敗時の処理
-    csv_data = CSV.open($1.strip, "r")
-    csv2html(csv_data)
-  end
+  #unless document.match /^```.*\n^#{tag_open}csv:(.+?)#{tag_close}$\n```/
+    document.gsub! /^#{tag_open}csv:(.+?)#{tag_close}$/ do
+      # TODO : file open 失敗時の処理
+      csv_data = CSV.open($1.strip, "r")
+      csv2html(csv_data)
+    end
+  #end
 end
 
 # CSVファイルを力技でHTML Tableにする

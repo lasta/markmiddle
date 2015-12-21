@@ -1,8 +1,9 @@
 # Definition List
 
 def definition_block(document, deflist_symbol)
-  document.gsub! /^(.+?)\n#{deflist_symbol}\ ([\s\S]+?)\n/ do
-    <<-EOF
+  unless document.match /^```.*\n^(.+?)\n#{deflist_symbol}\ ([\s\S]+?)\n```\n/
+    document.gsub! /^(.+?)\n#{deflist_symbol}\ ([\s\S]+?)\n/ do
+      <<-EOF
 <p>
   <dl>
     <dt>#{$1}</dt>
@@ -10,6 +11,7 @@ def definition_block(document, deflist_symbol)
   </dl>
 </p>
 
-    EOF
+      EOF
+    end
   end
 end

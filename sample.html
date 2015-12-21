@@ -1,20 +1,49 @@
-    <link href="./css/github.css" rel="stylesheet" />
-    <article class="markdown-body">
+<link href="./css/github.css" rel="stylesheet" />
+<article class="markdown-body">
 
 <h2>definition list</h2>
+<table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+</pre></td>
+  <td class="code"><pre>definition *list* title
+: definition list description
+</pre></td>
+</tr></table>
 
-<p>
-  <dl>
-    <dt>definition *list* title</dt>
-    <dd>definition list description</dd>
-  </dl>
-</p>
+<p>definition <em>list</em> title
+: definition list description</p>
 
 <h2>execution block</h2>
+<table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre>{{{ruby
+puts '**hello**'
+# hoge
+}}}
+</pre></td>
+</tr></table>
 
-<p><strong>hello</strong></p>
+<p>{{{ruby
+puts &#39;<strong>hello</strong>&#39;</p>
+
+<h1>hoge</h1>
+
+<p>}}}</p>
 
 <h2>code block</h2>
+
+<pre><code>
+```ruby
+def hello
+  puts 'hello'
+end
+```
+</code></pre>
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
 <a href="#n2" name="n2">2</a>
@@ -29,6 +58,18 @@
 <h2>table</h2>
 
 <h3>table what-you-see writing</h3>
+<table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+</pre></td>
+  <td class="code"><pre>| table_wys | column 1 | column 2 |
+|-----------|----------|----------|
+| row 1     | elem 1-1 | elem 1-2 |
+| row 2     | elem 2-1 | elem 2-2 |
+</pre></td>
+</tr></table>
 
 <table><thead>
 <tr>
@@ -50,6 +91,52 @@
 </tbody></table>
 
 <h3>table csv importing</h3>
+<table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<a href="#n15" name="n15">15</a>
+<a href="#n16" name="n16">16</a>
+<a href="#n17" name="n17">17</a>
+<a href="#n18" name="n18">18</a>
+<a href="#n19" name="n19">19</a>
+<strong><a href="#n20" name="n20">20</a></strong>
+<a href="#n21" name="n21">21</a>
+</pre></td>
+  <td class="code"><pre>&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;table_csv_import&lt;/th&gt;
+&lt;th&gt;column 1&lt;/th&gt;
+&lt;th&gt;column 2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;row 1&lt;/td&gt;
+&lt;td&gt;elem 1-1&lt;/td&gt;
+&lt;td&gt;elem 1-2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;row 2&lt;/td&gt;
+&lt;td&gt;elem 2-1&lt;/td&gt;
+&lt;td&gt;elem 2-2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</pre></td>
+</tr></table>
 
 <table>
 <thead>
@@ -74,6 +161,52 @@
 </table>
 
 <h3>table csv</h3>
+<table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+<a href="#n15" name="n15">15</a>
+<a href="#n16" name="n16">16</a>
+<a href="#n17" name="n17">17</a>
+<a href="#n18" name="n18">18</a>
+<a href="#n19" name="n19">19</a>
+<strong><a href="#n20" name="n20">20</a></strong>
+<a href="#n21" name="n21">21</a>
+</pre></td>
+  <td class="code"><pre>&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;table_csv&lt;/th&gt;
+&lt;th&gt;column 1&lt;/th&gt;
+&lt;th&gt;column 2&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;row 1&lt;/td&gt;
+&lt;td&gt;elem 1-1&lt;/td&gt;
+&lt;td&gt;elem 1-2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;row 2&lt;/td&gt;
+&lt;td&gt;elem 2-1&lt;/td&gt;
+&lt;td&gt;elem 2-2&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+</pre></td>
+</tr></table>
 
 <table>
 <thead>
