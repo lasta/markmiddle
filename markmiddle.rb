@@ -27,6 +27,7 @@ def markmiddle(text)
     :with_toc_data => true,
     :hard_wrap => true
   }
+
   markmiddle_to_html = Redcarpet::Markdown.new(MarkmiddleRenderer, options)
   markmiddle_to_html.render(text)
 end

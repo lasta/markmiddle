@@ -8,3 +8,9 @@ class MarkmiddleRenderer < Redcarpet::Render::HTML
     CodeRay.scan(code, language).div(:line_numbers => :table)
   end
 end
+
+class MarkdownWithCoderay < Redcarpet::Render::HTML
+  def block_code(code, language)
+    CodeRay.scan(code, language).div(:line_numbers => :table)
+  end
+end
