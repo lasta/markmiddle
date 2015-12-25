@@ -4,6 +4,7 @@ require './lib/table_block'
 
 class MarkmiddleRenderer < Redcarpet::Render::HTML
   def preprocess(document)
+
     # 別の場所で記号を定義
     deflist_symbol = ':'
     definition_block(document, deflist_symbol)

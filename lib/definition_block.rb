@@ -1,3 +1,4 @@
+require './markmiddle'
 # Definition List
 def definition_block(document, deflist_symbol)
   # unless document.match(/^```.*\n^(.+?)\n#{deflist_symbol}\ ([\s\S]+?)\n```\n/)

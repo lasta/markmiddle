@@ -11,24 +11,29 @@ require './lib/process'
 
 $VERSION = '0.0.1'
 
-def markmiddle(text)
-  options = {
-    :no_intra_emphasis => true,
-    :tables => true,
-    :fenced_code_blocks => true,
-    :autolink => true,
-    :disable_indented_code_blocks => true,
-    :lax_spacing => true,
-    :superscript => true,
-    :strikethrough => true,
-    :footnotes => true,
-    :lax_html_blocks => true,
-    # :filter_html => true,
-    :with_toc_data => true,
-    :hard_wrap => true
-  }
+$RENDER_OPTIONS = {
+  :no_intra_emphasis => true,
+  :tables => true,
+  :fenced_code_blocks => true,
+  :autolink => true,
+  :disable_indented_code_blocks => true,
+  :lax_spacing => true,
+  :superscript => true,
+  :strikethrough => true,
+  :footnotes => true,
+  :lax_html_blocks => true,
+  # :filter_html => true,
+  :with_toc_data => true,
+  :hard_wrap => true
+}
 
-  markmiddle_to_html = Redcarpet::Markdown.new(MarkmiddleRenderer, options)
+def markmiddle(text)
+  markmiddle_to_html = Redcarpet::Markdown.new(MarkmiddleRenderer, $RENDER_OPTIONS)
+  markmiddle_to_html.render(text)
+end
+
+def coderay(text)
+  markmiddle_to_html = Redcarpet::Markdown.new(CoderayRenderer, $RENDER_OPTIONS)
   markmiddle_to_html.render(text)
 end
 
