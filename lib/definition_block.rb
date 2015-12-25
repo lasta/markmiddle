@@ -1,7 +1,10 @@
 require './markmiddle'
 # Definition List
 def definition_block(document, deflist_symbol)
-  document.gsub! /^(.+?)\n#{deflist_symbol}\ (.+?)\n\n/ do
+  puts document
+  deflist_symbol = ':'
+  # document.gsub! /^([\s\S]+?)\n#{deflist_symbol}\ ([\s\S]+?)\n/ do
+  document.gsub! /^(?!<pre>)(.+?)\n:\ ([\s\S]+?)\n\n/ do
     <<-EOF
 <p>
   <dl>
