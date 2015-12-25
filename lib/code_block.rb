@@ -16,7 +16,7 @@ class CoderayRenderer < Redcarpet::Render::HTML
 end
 
 def pre_code_block(document)
-  document.gsub! /^(```[\s\S]+?```)/ do
+  document.gsub! /(\`\`\`[\s\S]+?\`\`\`)/ do
     coderay($1) + '\n'
   end
 end

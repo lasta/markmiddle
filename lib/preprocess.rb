@@ -6,6 +6,7 @@ require './lib/table_block'
 class MarkmiddleRenderer < Redcarpet::Render::HTML
   def preprocess(document)
     # 先にコードブロックだけレンダリングする
+    # 必ずpreprocessの最初に実行
     # pre_code_block(document)
 
     # 別の場所で記号を定義
@@ -22,6 +23,6 @@ class MarkmiddleRenderer < Redcarpet::Render::HTML
     # table_block_symbol_open = '\{\{'
     # table_block_symbol_close = '\}\}'
     # table_block(document, table_block_symbol_open, table_block_symbol_close)
+    document
   end
 end
-

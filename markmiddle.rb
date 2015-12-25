@@ -7,7 +7,6 @@ require 'open3'
 # require './lib/code_block.rb'
 require './lib/document_style.rb'
 require './lib/preprocess'
-require './lib/process'
 
 $VERSION = '0.0.1'
 
@@ -22,7 +21,7 @@ $RENDER_OPTIONS = {
   :strikethrough => true,
   :footnotes => true,
   :lax_html_blocks => true,
-  # :filter_html => true,
+  :filter_html => true,
   :with_toc_data => true,
   :hard_wrap => true
 }
@@ -41,6 +40,18 @@ end
 unless ARGV[0].nil? then
   input_file = File.open(ARGV[0])
 else
-  input_file = File.open('./sample_wo_codeblock.mm')
+  input_file = File.open('./sample.mm')
 end
-puts markmiddle(input_file.read)
+# puts markmiddle(input_file.read)
+
+### ---------------------
+### begin test
+$test = <<-EOS
+
+**hoge**
+
+EOS
+
+puts markmiddle($test)
+### end test
+### ---------------------
