@@ -14,3 +14,9 @@ class CoderayRenderer < Redcarpet::Render::HTML
     CodeRay.scan(code, language).div(:line_numbers => :table)
   end
 end
+
+def pre_code_block(document)
+  document.gsub! /^(```[\s\S]+?```)/ do
+    coderay($1) + '\n'
+  end
+end

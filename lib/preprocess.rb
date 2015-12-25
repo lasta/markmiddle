@@ -1,9 +1,12 @@
 require './lib/execution_block.rb'
 require './lib/definition_block.rb'
 require './lib/table_block'
+require './lib/code_block'
 
 class MarkmiddleRenderer < Redcarpet::Render::HTML
   def preprocess(document)
+    # 先にコードブロックだけレンダリングする
+    pre_code_block(document)
 
     # 別の場所で記号を定義
     deflist_symbol = ':'
