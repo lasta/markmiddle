@@ -48,10 +48,8 @@ end
 ### begin test
 $test = <<-EOS
 
-```markdown
 hoge
 : fuga
-```
 
 EOS
 

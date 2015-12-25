@@ -5,13 +5,21 @@ require 'coderay'
 
 class MarkmiddleRenderer < Redcarpet::Render::HTML
   def block_code(code, language)
-    CodeRay.scan(code, language).div(:line_numbers => :table)
+    unless language == nil
+      CodeRay.scan(code, language).div(:line_numbers => :table)
+    else
+      CodeRay.scan(code, 'markmiddle').div(:line_numbers => :table)
+    end
   end
 end
 
 class CoderayRenderer < Redcarpet::Render::HTML
   def block_code(code, language)
-    CodeRay.scan(code, language).div(:line_numbers => :table)
+    unless language == nil
+      CodeRay.scan(code, language).div(:line_numbers => :table)
+    else
+      CodeRay.scan(code, 'markmiddle').div(:line_numbers => :table)
+    end
   end
 end
 

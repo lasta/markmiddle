@@ -10,7 +10,7 @@ class MarkmiddleRenderer < Redcarpet::Render::HTML
 
   def doc_footer
     <<-"EOS"
-    </article>
+</article>
     EOS
   end
 end
