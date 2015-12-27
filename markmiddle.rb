@@ -1,13 +1,12 @@
 #! /usr/bin/env ruby
 require 'redcarpet'
-# require 'html/pipeline'
 require 'tempfile'
 require 'open3'
 
 $LOAD_PATH << './lib/'
 require 'document_style'
 require 'prerenderer'
-# require 'preprocess'
+require 'preprocess'
 
 $VERSION = '0.0.1'
 
@@ -28,9 +27,12 @@ $RENDER_OPTIONS = {
 }
 
 def markmiddle(text)
-  mkd_document = markmiddle_prerenderer(text)
+  mkd_document = prerenderer(text)
   markmiddle_to_html = Redcarpet::Markdown.new(MarkmiddleRenderer, $RENDER_OPTIONS)
-  markmiddle_to_html.render(mkd_document)
+  # markmiddle_to_html.render(mkd_document)
+  # begin test -----
+  mkd_document
+  # end test -------
 end
 
 def coderay(text)

@@ -1,34 +1,26 @@
-<link href="./css/github.css" rel="stylesheet" />
-<article class="markdown-body">
+## definition list
+```markmiddle
+definition *list* title
+: definition list description
+```
 
-<h2>definition list</h2>
+definition *list* title
+: definition list description
 
-<pre><code class="markmiddle">&lt;p&gt;
-  &lt;dl&gt;
-    &lt;dt&gt;definition *list* title&lt;/dt&gt;
-    &lt;dd&gt;definition list description&lt;/dd&gt;
-  &lt;/dl&gt;
-&lt;/p&gt;
+## execution block
+```markmiddle
+{{{ruby
+puts '**hello**'
+# hoge
+}}}
+```
 
-</code></pre>
+{{{ruby
+puts '**hello**'
+# hoge
+}}}
 
-<p>
-  <dl>
-    <dt>definition *list* title</dt>
-    <dd>definition list description</dd>
-  </dl>
-</p>
-
-<h2>execution block</h2>
-
-<pre><code class="markmiddle">**hello**
-
-</code></pre>
-
-<p><strong>hello</strong></p>
-
-<h2>code block</h2>
-
+## code block
 <pre><code>
 ```ruby
 def hello
@@ -37,131 +29,44 @@ end
 ```
 </code></pre>
 
-<pre><code class="ruby">def hello
-  puts &#39;hello&#39;
+```ruby
+def hello
+  puts 'hello'
 end
-</code></pre>
+```
 
-<h2>table</h2>
-
-<h3>table what-you-see writing</h3>
-
-<pre><code class="markdown">| table_wys | column 1 | column 2 |
+## table
+### table what-you-see writing
+```markdown
+| table_wys | column 1 | column 2 |
 |-----------|----------|----------|
 | row 1     | elem 1-1 | elem 1-2 |
 | row 2     | elem 2-1 | elem 2-2 |
-</code></pre>
+```
 
-<table><thead>
-<tr>
-<th>table_wys</th>
-<th>column 1</th>
-<th>column 2</th>
-</tr>
-</thead><tbody>
-<tr>
-<td>row 1</td>
-<td>elem 1-1</td>
-<td>elem 1-2</td>
-</tr>
-<tr>
-<td>row 2</td>
-<td>elem 2-1</td>
-<td>elem 2-2</td>
-</tr>
-</tbody></table>
+| table_wys | column 1 | column 2 |
+|-----------|----------|----------|
+| row 1     | elem 1-1 | elem 1-2 |
+| row 2     | elem 2-1 | elem 2-2 |
 
-<h3>table csv importing</h3>
+### table csv importing
+```markmiddle
+{{csv: ./table_csv_import.csv }}
+```
 
-<pre><code class="markmiddle">&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;table_csv_import&lt;/th&gt;
-&lt;th&gt;column 1&lt;/th&gt;
-&lt;th&gt;column 2&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;row 1&lt;/td&gt;
-&lt;td&gt;elem 1-1&lt;/td&gt;
-&lt;td&gt;elem 1-2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;row 2&lt;/td&gt;
-&lt;td&gt;elem 2-1&lt;/td&gt;
-&lt;td&gt;elem 2-2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-</code></pre>
+{{csv: ./table_csv_import.csv }}
 
-<table>
-<thead>
-<tr>
-<th>table_csv_import</th>
-<th>column 1</th>
-<th>column 2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>row 1</td>
-<td>elem 1-1</td>
-<td>elem 1-2</td>
-</tr>
-<tr>
-<td>row 2</td>
-<td>elem 2-1</td>
-<td>elem 2-2</td>
-</tr>
-</tbody>
-</table>
+### table csv
+```markmiddle
+{{csv
+table_csv,column 1,column 2
+row 1,elem 1-1,elem 1-2
+row 2,elem 2-1,elem 2-2
+}}
+```
 
-<h3>table csv</h3>
-
-<pre><code class="markmiddle">&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th&gt;table_csv&lt;/th&gt;
-&lt;th&gt;column 1&lt;/th&gt;
-&lt;th&gt;column 2&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td&gt;row 1&lt;/td&gt;
-&lt;td&gt;elem 1-1&lt;/td&gt;
-&lt;td&gt;elem 1-2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td&gt;row 2&lt;/td&gt;
-&lt;td&gt;elem 2-1&lt;/td&gt;
-&lt;td&gt;elem 2-2&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-</code></pre>
-
-<table>
-<thead>
-<tr>
-<th>table_csv</th>
-<th>column 1</th>
-<th>column 2</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>row 1</td>
-<td>elem 1-1</td>
-<td>elem 1-2</td>
-</tr>
-<tr>
-<td>row 2</td>
-<td>elem 2-1</td>
-<td>elem 2-2</td>
-</tr>
-</tbody>
-</table>
-</article>
+{{csv
+table_csv,column 1,column 2
+row 1,elem 1-1,elem 1-2
+row 2,elem 2-1,elem 2-2
+}}
