@@ -11,8 +11,8 @@ def prerenderer(document)
   deflist_symbol = ':'
   definition_block(document, deflist_symbol)
 
-  # execution_block_symbol = ['{{{', '}}}']
-  # execution_block(document, execution_block_symbol)
+  execution_block_symbol = ['{{{', '}}}']
+  execution_block(document, execution_block_symbol)
 
   # # table_block(document, '{{', '}}')
   # table_csv(document, '{{', '}}')

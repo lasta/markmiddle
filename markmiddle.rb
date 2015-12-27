@@ -29,10 +29,7 @@ $RENDER_OPTIONS = {
 def markmiddle(text)
   mkd_document = prerenderer(text)
   markmiddle_to_html = Redcarpet::Markdown.new(MarkmiddleRenderer, $RENDER_OPTIONS)
-  # markmiddle_to_html.render(mkd_document)
-  # begin test -----
-  mkd_document
-  # end test -------
+  markmiddle_to_html.render(mkd_document)
 end
 
 def coderay(text)

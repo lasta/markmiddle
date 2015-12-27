@@ -1,18 +1,16 @@
-## definition list
+<link href="./css/github.css" rel="stylesheet" />
+<article class="markdown-body">
+
+<h2>definition list</h2>
+
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
 <a href="#n2" name="n2">2</a>
 </pre></td>
-<p>
-  <dl>
-    <dt>  <td class="code"><pre>definition *list* title</dt>
-    <dd>definition list description</dd>
-  </dl>
-</p>
-
+  <td class="code"><pre>definition *list* title
+: definition list description
 </pre></td>
 </tr></table>
-
 
 <p>
   <dl>
@@ -21,28 +19,37 @@
   </dl>
 </p>
 
+<h2>execution block</h2>
 
-## execution block
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
 <a href="#n2" name="n2">2</a>
 <a href="#n3" name="n3">3</a>
 <a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
 </pre></td>
   <td class="code"><pre>{{{ruby
-puts '**hello**'
+def fib n
+  return n if n &lt; 2
+  fib(n-2) + fib(n-1)
+end
+
+puts 'fibonacci(10) = ' + fib(10).to_s
+
 # hoge
 }}}
 </pre></td>
 </tr></table>
 
+<p>fibonacci(10) = 55</p>
 
-{{{ruby
-puts '**hello**'
-# hoge
-}}}
+<h2>code block</h2>
 
-## code block
 <pre><code>
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
@@ -68,9 +75,10 @@ puts '**hello**'
 </pre></td>
 </tr></table>
 
+<h2>table</h2>
 
-## table
-### table what-you-see writing
+<h3>table what-you-see writing</h3>
+
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
 <a href="#n2" name="n2">2</a>
@@ -84,13 +92,27 @@ puts '**hello**'
 </pre></td>
 </tr></table>
 
+<table><thead>
+<tr>
+<th>table_wys</th>
+<th>column 1</th>
+<th>column 2</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>row 1</td>
+<td>elem 1-1</td>
+<td>elem 1-2</td>
+</tr>
+<tr>
+<td>row 2</td>
+<td>elem 2-1</td>
+<td>elem 2-2</td>
+</tr>
+</tbody></table>
 
-| table_wys | column 1 | column 2 |
-|-----------|----------|----------|
-| row 1     | elem 1-1 | elem 1-2 |
-| row 2     | elem 2-1 | elem 2-2 |
+<h3>table csv importing</h3>
 
-### table csv importing
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
 </pre></td>
@@ -98,10 +120,10 @@ puts '**hello**'
 </pre></td>
 </tr></table>
 
+<p>{{csv: ./table_csv_import.csv }}</p>
 
-{{csv: ./table_csv_import.csv }}
+<h3>table csv</h3>
 
-### table csv
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
 <a href="#n2" name="n2">2</a>
@@ -117,9 +139,9 @@ row 2,elem 2-1,elem 2-2
 </pre></td>
 </tr></table>
 
-
-{{csv
+<p>{{csv
 table_csv,column 1,column 2
 row 1,elem 1-1,elem 1-2
 row 2,elem 2-1,elem 2-2
-}}
+}}</p>
+</article>
