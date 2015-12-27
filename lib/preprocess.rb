@@ -1,9 +1,12 @@
-require './lib/code_block'
-require './lib/execution_block.rb'
-require './lib/definition_block.rb'
-require './lib/table_block'
+$LOAD_PATH << './lib/'
+require 'code_block'
+require 'execution_block.rb'
+require 'definition_block.rb'
+require 'table_block'
 
 class MarkmiddleRenderer < Redcarpet::Render::HTML
+  # TODO
+  # preprocessでmarkmiddleのrenderをしない
   def preprocess(document)
     # 先にコードブロックだけレンダリングする
     # 必ずpreprocessの最初に実行

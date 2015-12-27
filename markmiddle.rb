@@ -1,11 +1,13 @@
 #! /usr/bin/env ruby
 require 'redcarpet'
-require 'html/pipeline'
+# require 'html/pipeline'
 require 'tempfile'
 require 'open3'
 
-require './lib/document_style.rb'
-require './lib/preprocess'
+$LOAD_PATH << './lib/'
+require 'document_style'
+require 'prerenderer'
+# require 'preprocess'
 
 $VERSION = '0.0.1'
 
@@ -26,8 +28,9 @@ $RENDER_OPTIONS = {
 }
 
 def markmiddle(text)
+  mkd_document = markmiddle_prerenderer(text)
   markmiddle_to_html = Redcarpet::Markdown.new(MarkmiddleRenderer, $RENDER_OPTIONS)
-  markmiddle_to_html.render(text)
+  markmiddle_to_html.render(mkd_document)
 end
 
 def coderay(text)
@@ -41,17 +44,4 @@ unless ARGV[0].nil? then
 else
   input_file = File.open('./sample.mm')
 end
-# puts markmiddle(input_file.read)
-
-### ---------------------
-### begin test
-$test = <<-EOS
-
-hoge
-: fuga
-
-EOS
-
-puts markmiddle($test)
-### end test
-### ---------------------
+puts markmiddle(input_file.read)

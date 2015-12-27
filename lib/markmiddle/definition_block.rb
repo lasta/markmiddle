@@ -1,4 +1,3 @@
-require './markmiddle'
 # Definition List
 def definition_block(document, deflist_symbol)
   deflist_symbol = ':'

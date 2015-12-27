@@ -14,4 +14,3 @@ class MarkmiddleRenderer < Redcarpet::Render::HTML
     EOS
   end
 end
-
