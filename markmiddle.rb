@@ -7,6 +7,7 @@ $LOAD_PATH << './lib/'
 require 'document_style'
 require 'prerenderer'
 require 'preprocess'
+require 'block_code_pygments'
 
 $VERSION = '0.0.1'
 
@@ -34,6 +35,11 @@ end
 
 def coderay(text)
   markmiddle_to_html = Redcarpet::Markdown.new(CoderayRenderer, $RENDER_OPTIONS)
+  markmiddle_to_html.render(text)
+end
+
+def pygments(text)
+  markmiddle_to_html = Redcarpet::Markdown.new(PygmentsRenderer, $RENDER_OPTIONS)
   markmiddle_to_html.render(text)
 end
 

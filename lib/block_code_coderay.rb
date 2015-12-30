@@ -8,7 +8,7 @@ class MarkmiddleRenderer < Redcarpet::Render::HTML
     unless language == nil
       CodeRay.scan(code, language).div(:line_numbers => :table)
     else
-      CodeRay.scan(code, 'markmiddle').div(:line_numbers => :table)
+      CodeRay.scan(code, 'Markdown').div(:line_numbers => :table)
     end
   end
 end
@@ -18,7 +18,7 @@ class CoderayRenderer < Redcarpet::Render::HTML
     unless language == nil
       CodeRay.scan(code, language).div(:line_numbers => :table)
     else
-      CodeRay.scan(code, 'markmiddle').div(:line_numbers => :table)
+      CodeRay.scan(code, 'Markdown').div(:line_numbers => :table)
     end
   end
 end

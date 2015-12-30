@@ -3,7 +3,7 @@ require 'code_block'
 require 'definition_block'
 require 'execution_block'
 require 'table_block'
-require 'regex.rb'
+require 'regex'
 
 def prerenderer(document)
   code_block(document)
