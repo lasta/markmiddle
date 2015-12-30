@@ -2,6 +2,7 @@
 
 # true  : coderay
 # false : pygments
+# TODO: とりあえずcoderayでやる。いずれpygmentsに移行する
 if true
   require 'coderay'
   def code_block(document)

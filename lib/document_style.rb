@@ -4,6 +4,7 @@ class MarkmiddleRenderer < Redcarpet::Render::HTML
   def doc_header
     <<-"EOS"
 <link href="./css/github.css" rel="stylesheet" />
+<link href="./css/monokai.css" rel="stylesheet" />
 <article class="markdown-body">
     EOS
   end
