@@ -14,9 +14,9 @@ def prerenderer(document)
   execution_block_symbol = ['{{{', '}}}']
   execution_block(document, execution_block_symbol)
 
-  # # table_block(document, '{{', '}}')
-  # table_csv(document, '{{', '}}')
-  # table_csv_import(document, '{{', '}}')
+  # table_block(document, '{{', '}}')
+  table_csv(document, '{{', '}}')
+  table_csv_import(document, '{{', '}}')
   # execution blockのように配列で渡すとなぜかsegmentation fault
   # table_block_symbol_open = '\{\{'
   # table_block_symbol_close = '\}\}'

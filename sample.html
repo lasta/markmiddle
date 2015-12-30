@@ -12,6 +12,7 @@
 </pre></td>
 </tr></table>
 
+
 <p>
   <dl>
     <dt>definition *list* title</dt>
@@ -19,8 +20,8 @@
   </dl>
 </p>
 
-<h2>execution block</h2>
 
+## execution block
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
 <a href="#n2" name="n2">2</a>
@@ -46,10 +47,11 @@ puts 'fibonacci(10) = ' + fib(10).to_s
 </pre></td>
 </tr></table>
 
-<p>fibonacci(10) = 55</p>
 
-<h2>code block</h2>
+fibonacci(10) = 55
 
+
+## code block
 <pre><code>
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
@@ -75,10 +77,9 @@ puts 'fibonacci(10) = ' + fib(10).to_s
 </pre></td>
 </tr></table>
 
-<h2>table</h2>
 
-<h3>table what-you-see writing</h3>
-
+## table
+### table what-you-see writing
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
 <a href="#n2" name="n2">2</a>
@@ -92,13 +93,30 @@ puts 'fibonacci(10) = ' + fib(10).to_s
 </pre></td>
 </tr></table>
 
-<table><thead>
+
+| table_wys | column 1 | column 2 |
+|-----------|----------|----------|
+| row 1     | elem 1-1 | elem 1-2 |
+| row 2     | elem 2-1 | elem 2-2 |
+
+### table csv importing
+<table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>{{csv: ./table_csv_import.csv }}
+</pre></td>
+</tr></table>
+
+
+<table>
+<thead>
 <tr>
-<th>table_wys</th>
+<th>table_csv_import</th>
 <th>column 1</th>
 <th>column 2</th>
 </tr>
-</thead><tbody>
+</thead>
+<tbody>
 <tr>
 <td>row 1</td>
 <td>elem 1-1</td>
@@ -109,18 +127,8 @@ puts 'fibonacci(10) = ' + fib(10).to_s
 <td>elem 2-1</td>
 <td>elem 2-2</td>
 </tr>
-</tbody></table>
-
-<h3>table csv importing</h3>
-
-<table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-</pre></td>
-  <td class="code"><pre>{{csv: ./table_csv_import.csv }}
-</pre></td>
-</tr></table>
-
-<p>{{csv: ./table_csv_import.csv }}</p>
+</tbody>
+</table>
 
 <h3>table csv</h3>
 
@@ -139,9 +147,26 @@ row 2,elem 2-1,elem 2-2
 </pre></td>
 </tr></table>
 
-<p>{{csv
-table_csv,column 1,column 2
-row 1,elem 1-1,elem 1-2
-row 2,elem 2-1,elem 2-2
-}}</p>
+
+<table>
+<thead>
+<tr>
+<th>table_csv</th>
+<th>column 1</th>
+<th>column 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>row 1</td>
+<td>elem 1-1</td>
+<td>elem 1-2</td>
+</tr>
+<tr>
+<td>row 2</td>
+<td>elem 2-1</td>
+<td>elem 2-2</td>
+</tr>
+</tbody>
+</table>
 </article>
