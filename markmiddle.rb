@@ -49,4 +49,12 @@ unless ARGV[0].nil? then
 else
   input_file = File.open('./sample.mm')
 end
-puts markmiddle(input_file.read)
+output = markmiddle(input_file.read)
+
+$USE_KRAMDOWN = true
+if $USE_KRAMDOWN
+  require 'kramdown'
+  puts Kramdown::Document.new(output).to_html
+else
+  puts output
+end

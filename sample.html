@@ -1,6 +1,6 @@
 <link href="./css/github.css" rel="stylesheet" />
+
 <link href="./css/monokai.css" rel="stylesheet" />
-<article>
 
 <h2>definition list</h2>
 
@@ -13,7 +13,6 @@
 </pre></td>
 </tr></table>
 
-
 <p>
   <dl>
     <dt>definition *list* title</dt>
@@ -21,8 +20,7 @@
   </dl>
 </p>
 
-
-## execution block
+<h2 id="execution-block">execution block</h2>
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
 <a href="#n2" name="n2">2</a>
@@ -48,11 +46,9 @@ puts 'fibonacci(10) = ' + fib(10).to_s
 </pre></td>
 </tr></table>
 
+<p>fibonacci(10) = 55</p>
 
-fibonacci(10) = 55
-
-
-## code block
+<h2 id="code-block">code block</h2>
 <pre><code>
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
@@ -78,9 +74,8 @@ fibonacci(10) = 55
 </pre></td>
 </tr></table>
 
-
-## table
-### table what-you-see writing
+<h2 id="table">table</h2>
+<p>### table what-you-see writing</p>
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
 <a href="#n2" name="n2">2</a>
@@ -94,20 +89,35 @@ fibonacci(10) = 55
 </pre></td>
 </tr></table>
 
+<table>
+  <thead>
+    <tr>
+      <th>table_wys</th>
+      <th>column 1</th>
+      <th>column 2</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>row 1</td>
+      <td>elem 1-1</td>
+      <td>elem 1-2</td>
+    </tr>
+    <tr>
+      <td>row 2</td>
+      <td>elem 2-1</td>
+      <td>elem 2-2</td>
+    </tr>
+  </tbody>
+</table>
 
-| table_wys | column 1 | column 2 |
-|-----------|----------|----------|
-| row 1     | elem 1-1 | elem 1-2 |
-| row 2     | elem 2-1 | elem 2-2 |
-
-### table csv importing
+<h3 id="table-csv-importing">table csv importing</h3>
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
 </pre></td>
   <td class="code"><pre>{{csv: ./table_csv_import.csv }}
 </pre></td>
 </tr></table>
-
 
 <table>
 <thead>
@@ -148,7 +158,6 @@ row 2,elem 2-1,elem 2-2
 </pre></td>
 </tr></table>
 
-
 <table>
 <thead>
 <tr>
@@ -170,4 +179,3 @@ row 2,elem 2-1,elem 2-2
 </tr>
 </tbody>
 </table>
-</article>
