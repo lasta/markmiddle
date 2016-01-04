@@ -9,7 +9,7 @@ require 'prerenderer'
 require 'preprocess'
 require 'block_code_pygments'
 
-$VERSION = '0.0.1'
+$VERSION = '0.1'
 
 $RENDER_OPTIONS = {
   :no_intra_emphasis => true,
