@@ -48,6 +48,7 @@ end
 ```
 
 ## table
+
 ### table what-you-see writing
 ```markdown
 | table_wys | column 1 | column 2 |
