@@ -92,3 +92,11 @@ $$ \sum $$
 )))
 
 $$ \sum\^{n}\_{i = 1} n = \frac{1}{2} n (n -1) $$
+
+## inline elements in html block
+
+```html
+<sup>**2**</sup>
+```
+
+<sup>**2**</sup>
