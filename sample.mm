@@ -85,8 +85,10 @@ row 2,elem 2-1,elem 2-2
 }}
 
 ## Math
-$ \sum $
+$$ \sum $$
 
-\\[
+(((math
   \sum\^n\_{k=1} a\_{1} r\^{k-1} = a\_1 \bullet \frac{1-r\^n}{1-r}
-\\]
+)))
+
+$$ \sum\^{n}\_{i = 1} n = \frac{1}{2} n (n -1) $$

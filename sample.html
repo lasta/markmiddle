@@ -3,7 +3,11 @@
 <link href="./css/monokai.css" rel="stylesheet" />
 <script type="math/tex"></script>
 <script type="text/x-mathjax-config">
-  MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\(","\)"]] } });
+  MathJax.Hub.Config({ tex2jax: { 
+      inlineMath: [['$$','$$'], ["\(","\)"]],
+      displayMath: [['(((math',')))'], ["\[", "\]"]]
+    } 
+  });
 </script>
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
 </script>
@@ -190,8 +194,10 @@ row 2,elem 2-1,elem 2-2
 
 <h2>Math</h2>
 
-<p>$ \sum $</p>
+<p>$$ \sum $$</p>
 
-<p>\[
+<p>(((math
   \sum^n_{k=1} a_{1} r^{k-1} = a_1 \bullet \frac{1-r^n}{1-r}
-\]</p>
+)))</p>
+
+<p>$$ \sum^{n}_{i = 1} n = \frac{1}{2} n (n -1) $$</p>
