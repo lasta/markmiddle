@@ -1,10 +1,10 @@
 ## definition list
 ```markmiddle
-definition *list* title
+definition list title
 : definition list description
 ```
 
-definition *list* title
+definition list title
 : definition list description
 
 ## execution block
