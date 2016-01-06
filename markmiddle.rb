@@ -7,7 +7,8 @@ $LOAD_PATH << './lib/'
 require 'document_style'
 require 'prerenderer'
 require 'preprocess'
-require 'block_code_pygments'
+require 'postprocess'
+#require 'block_code_pygments'
 
 $VERSION = '0.1'
 
@@ -51,10 +52,4 @@ else
 end
 output = markmiddle(input_file.read)
 
-$USE_KRAMDOWN = true
-if $USE_KRAMDOWN
-  require 'kramdown'
-  puts Kramdown::Document.new(output).to_html
-else
-  puts output
-end
+puts postprocess(output, true)
