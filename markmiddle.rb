@@ -10,7 +10,7 @@ require 'preprocess'
 require 'postprocess'
 #require 'block_code_pygments'
 
-$VERSION = '0.1'
+$VERSION = '0.2'
 
 $RENDER_OPTIONS = {
   :no_intra_emphasis => true,
