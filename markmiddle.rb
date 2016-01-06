@@ -48,7 +48,7 @@ end
 unless ARGV[0].nil? then
   input_file = File.open(ARGV[0])
 else
-  input_file = File.open('./sample/sample.mm')
+  input_file = File.open('./sample.mm')
 end
 output = markmiddle(input_file.read)
 
