@@ -1,0 +1,130 @@
+<head>
+<link href="./css/github.css" rel="stylesheet" />
+<link href="./css/monokai.css" rel="stylesheet" />
+<script type="math/tex"></script>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({ tex2jax: { 
+      inlineMath: [['$$','$$'], ["\(","\)"]],
+      displayMath: [['(((math',')))'], ["\[", "\]"]]
+    } 
+  });
+</script>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
+</script>
+</head>
+
+<h1>Markmiddle Syntax Test</h1>
+
+<h1>第一見出し</h1>
+
+<h2>第二見出し</h2>
+
+<h2>第二見出し</h2>
+
+<table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+<a href="#n6" name="n6">6</a>
+<a href="#n7" name="n7">7</a>
+<a href="#n8" name="n8">8</a>
+<a href="#n9" name="n9">9</a>
+<strong><a href="#n10" name="n10">10</a></strong>
+<a href="#n11" name="n11">11</a>
+<a href="#n12" name="n12">12</a>
+<a href="#n13" name="n13">13</a>
+<a href="#n14" name="n14">14</a>
+</pre></td>
+  <td class="code"><pre># 第一見出し
+
+第一見出し
+==========
+
+## 第二見出し
+
+第二見出し
+----------
+
+### 第三見出し
+#### 第四見出し
+##### 第五見出し
+###### 第六見出し
+</pre></td>
+</tr></table>
+
+<h3>第三見出し</h3>
+
+<p>段落</p>
+
+<p>空行を挟むと、新しい段落になる</p>
+
+<p>Markmiddleでは改行は無視される<br />
+半角スペース2つ <code></code> で強制的に改行することができる</p>
+
+<h2>Markmiddleで追加された記法</h2>
+
+<h3>EvalBlock</h3>
+
+<p><code>{{{</code>と<code>}}}</code>で囲まれた内容を評価し、標準出力と標準エラーをドキュメント内に挿入する  </p>
+
+<table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+</pre></td>
+  <td class="code"><pre>{{{ruby # `}}}`までの入力を渡すプログラム
+puts 'hoge' # 標準出力がドキュメントに挿入される
+}}}
+</pre></td>
+</tr></table>
+
+<p>hoge</p>
+
+<ul>
+<li>shellコマンドの実行結果を挿入する場合は、<code>{{{</code>と<code>}}}</code>内に改行せずに入力を与える</li>
+</ul>
+
+<table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>{{{ echo 'hoge' }}}
+</pre></td>
+</tr></table>
+
+<p>hoge</p>
+
+<ul>
+<li>実行結果はそのままテキストとして挿入されるため、出力の見た目を維持する(コードブロックとして挿入する)場合は、閉じカッコにバッククオートをつける</li>
+</ul>
+
+<table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+</pre></td>
+  <td class="code"><pre>{{{ echo 'hoge' }}}`
+</pre></td>
+</tr></table>
+
+<pre><code>hoge
+</code></pre>
+
+<table class="CodeRay"><tr>
+  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
+<a href="#n2" name="n2">2</a>
+<a href="#n3" name="n3">3</a>
+<a href="#n4" name="n4">4</a>
+<a href="#n5" name="n5">5</a>
+</pre></td>
+  <td class="code"><pre>{{{ruby
+puts &quot;1行目\n&quot;
+puts &quot;2行目\n&quot;
+puts &quot;3行目\n&quot;
+}}}`
+</pre></td>
+</tr></table>
+
+<pre><code>1行目
+2行目
+3行目
+</code></pre>

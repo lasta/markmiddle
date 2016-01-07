@@ -24,7 +24,6 @@ def execution_block(document, tag)
     ret += exec2($1, $2)
     ret += "```\n\n"
   end
-
 end
 
 def exec1(command)

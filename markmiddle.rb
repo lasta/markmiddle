@@ -24,8 +24,9 @@ $RENDER_OPTIONS = {
   :footnotes => true,
   :lax_html_blocks => true,
   :filter_html => true,
+  :hard_wrap => true,
   :with_toc_data => true,
-  :hard_wrap => true
+  :a_parse_flag => true
 }
 
 def markmiddle(text)
