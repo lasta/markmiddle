@@ -1,4 +1,5 @@
 # Code block with syntax highlighting
+require 'pp'
 
 # true  : coderay
 # false : pygments
@@ -7,7 +8,13 @@ if true
   require 'coderay'
   def code_block(document)
     document.gsub! /```(.*?)\n([\s\S]+?)```/ do
-      CodeRay.scan($2, $1).div(:line_numbers => :table)
+      if $1 == ''
+        # exec-ed shell command
+        '<pre><code>' + $2 + '</code></pre>'
+      else
+        # exec-ed interpreter with script
+        CodeRay.scan($2, $1).div(:line_numbers => :table)
+      end
     end
   end
 

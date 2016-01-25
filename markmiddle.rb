@@ -30,7 +30,8 @@ $RENDER_OPTIONS = {
 }
 
 def markmiddle(text)
-  mkd_document = prerenderer(text)
+  mm_evaled_document = prerenderer(text, true)
+  mkd_document = prerenderer(mm_evaled_document, false)
   markmiddle_to_html = Redcarpet::Markdown.new(MarkmiddleRenderer, $RENDER_OPTIONS)
   markmiddle_to_html.render(mkd_document)
 end

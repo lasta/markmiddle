@@ -33,12 +33,11 @@ puts 'fibonacci(10) = ' + fib(10).to_s
 }}}
 
 ## code block
-<pre><code>
-```ruby
+<pre><code>&grave;&grave;&grave;ruby
 def hello
   puts 'hello'
 end
-```
+&grave;&grave;&grave;
 </code></pre>
 
 ```ruby

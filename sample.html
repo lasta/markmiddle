@@ -1,11 +1,11 @@
 <head>
+<meta charset="UTF-8" />
 <link href="./css/github.css" rel="stylesheet" />
-<link href="./css/monokai.css" rel="stylesheet" />
 <script type="math/tex"></script>
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({ tex2jax: { 
-      inlineMath: [['$$','$$'], ["\(","\)"]],
-      displayMath: [['(((math',')))'], ["\[", "\]"]]
+      inlineMath: [['$$','$$'], ["(",")"]],
+      displayMath: [['(((math',')))'], ["[", "]"]]
     } 
   });
 </script>
@@ -60,18 +60,11 @@ puts 'fibonacci(10) = ' + fib(10).to_s
 <p>fibonacci(10) = 55</p>
 
 <h2 id="code-block">code block</h2>
-<pre><code>
-<table class="CodeRay"><tr>
-  <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
-<a href="#n2" name="n2">2</a>
-<a href="#n3" name="n3">3</a>
-</pre></td>
-  <td class="code"><pre><span style="color:#080;font-weight:bold">def</span> <span style="color:#06B;font-weight:bold">hello</span>
-  puts <span style="background-color:hsla(0,100%,50%,0.05)"><span style="color:#710">'</span><span style="color:#D20">hello</span><span style="color:#710">'</span></span>
-<span style="color:#080;font-weight:bold">end</span>
-</pre></td>
-</tr></table>
-
+<pre><code>&grave;&grave;&grave;ruby
+def hello
+  puts 'hello'
+end
+&grave;&grave;&grave;
 </code></pre>
 
 <table class="CodeRay"><tr>
@@ -218,9 +211,9 @@ row 2,elem 2-1,elem 2-2
 </code></pre>
 
 <pre><code>Filesystem                        512-blocks      Used Available Capacity  iused    ifree %iused  Mounted on
-/dev/disk1                         487849984 261378416 225959568    54% 32736300 28244946   54%   /
-devfs                                    366       366         0   100%      634        0  100%   /dev
+/dev/disk1                         487849984 258632784 228705200    54% 32393096 28588150   53%   /
+devfs                                    372       372         0   100%      645        0  100%   /dev
 map -hosts                                 0         0         0   100%        0        0  100%   /net
 map auto_home                              0         0         0   100%        0        0  100%   /home
-localhost:/Rtn-G-MqBjOU8UuGwZZF-z  487849984 487849984         0   100%        0        0  100%   /Volumes/MobileBackups
+localhost:/c6WfJJUuz8Xkb1nMrZeiBH  487849984 487849984         0   100%        0        0  100%   /Volumes/MobileBackups
 </code></pre>
