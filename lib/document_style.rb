@@ -21,16 +21,20 @@ class MarkmiddleRenderer < Redcarpet::Render::HTML
   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
 </script>
     EOS
-    header = "<head>\n"
+    header = "<html>\n"
+    header += "<head>\n"
     header += charset
     header += css_whole
     # header += css_codeblock
     header += css_mathblock
     header += "</head>\n"
+    header += "<body>\n"
   end
 
   def doc_footer
     <<-"EOS"
     EOS
+    footer = "</body>\n"
+    footer += "</html>"
   end
 end

@@ -1,3 +1,4 @@
+<html>
 <head>
 <meta charset="UTF-8" />
 <link href="./css/github.css" rel="stylesheet" />
@@ -12,6 +13,7 @@
 <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML">
 </script>
 </head>
+<body>
 
 <h2>definition list</h2>
 
@@ -24,6 +26,7 @@
 </pre></td>
 </tr></table>
 
+
 <p>
   <dl>
     <dt>definition list title</dt>
@@ -31,7 +34,9 @@
   </dl>
 </p>
 
-<h2 id="execution-block">execution block</h2>
+
+<h2>execution block</h2>
+
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
 <a href="#n2" name="n2">2</a>
@@ -57,9 +62,11 @@ puts 'fibonacci(10) = ' + fib(10).to_s
 </pre></td>
 </tr></table>
 
-<p>fibonacci(10) = 55</p>
 
-<h2 id="code-block">code block</h2>
+fibonacci(10) = 55
+
+
+## code block
 <pre><code>&grave;&grave;&grave;ruby
 def hello
   puts 'hello'
@@ -78,9 +85,10 @@ end
 </pre></td>
 </tr></table>
 
-<h2 id="table">table</h2>
 
-<h3 id="table-what-you-see-writing">table what-you-see writing</h3>
+## table
+
+### table what-you-see writing
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
 <a href="#n2" name="n2">2</a>
@@ -94,35 +102,20 @@ end
 </pre></td>
 </tr></table>
 
-<table>
-  <thead>
-    <tr>
-      <th>table_wys</th>
-      <th>column 1</th>
-      <th>column 2</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>row 1</td>
-      <td>elem 1-1</td>
-      <td>elem 1-2</td>
-    </tr>
-    <tr>
-      <td>row 2</td>
-      <td>elem 2-1</td>
-      <td>elem 2-2</td>
-    </tr>
-  </tbody>
-</table>
 
-<h3 id="table-csv-importing">table csv importing</h3>
+| table_wys | column 1 | column 2 |
+|-----------|----------|----------|
+| row 1     | elem 1-1 | elem 1-2 |
+| row 2     | elem 2-1 | elem 2-2 |
+
+### table csv importing
 <table class="CodeRay"><tr>
   <td class="line-numbers"><pre><a href="#n1" name="n1">1</a>
 </pre></td>
   <td class="code"><pre>{{csv: ./table_csv_import.csv }}
 </pre></td>
 </tr></table>
+
 
 <table>
 <thead>
@@ -162,6 +155,7 @@ row 2,elem 2-1,elem 2-2
 }}
 </pre></td>
 </tr></table>
+
 
 <table>
 <thead>
@@ -211,9 +205,11 @@ row 2,elem 2-1,elem 2-2
 </code></pre>
 
 <pre><code>Filesystem                        512-blocks      Used Available Capacity  iused    ifree %iused  Mounted on
-/dev/disk1                         487849984 258632784 228705200    54% 32393096 28588150   53%   /
-devfs                                    372       372         0   100%      645        0  100%   /dev
+/dev/disk1                         487849984 289460256 197877728    60% 36246530 24734716   59%   /
+devfs                                    371       371         0   100%      642        0  100%   /dev
 map -hosts                                 0         0         0   100%        0        0  100%   /net
 map auto_home                              0         0         0   100%        0        0  100%   /home
-localhost:/c6WfJJUuz8Xkb1nMrZeiBH  487849984 487849984         0   100%        0        0  100%   /Volumes/MobileBackups
+localhost:/vaBOFYWBxeHI0FHnFSK0NR  487849984 487849984         0   100%        0        0  100%   /Volumes/MobileBackups
 </code></pre>
+</body>
+</html>
